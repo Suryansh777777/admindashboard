@@ -17,8 +17,21 @@ export async function createBlog({
 export async function getBlogs() {
   const blogs = await prisma.blog.findMany({ where: { isDeleted: false } });
   return blogs;
+  //title author created
 }
-
+export async function getBlogPost(id: number) {
+  return prisma.blog.findUnique({ where: { id, isDeleted: false } });
+}
+export async function getRelatedPosts(id: number) {
+  const blogs = await prisma.blog.findMany({
+    where: {
+      isDeleted: false,
+      id: { not: id },
+    },
+    take: 3,
+  });
+  return blogs;
+}
 export async function updateBlog(
   id: number,
   { title, content }: { title: string; content: string }
@@ -37,8 +50,8 @@ export async function deleteBlog(id: number) {
   });
 }
 
-const DEFAULT_ADMIN_EMAIL = "admin@example.com";
-const DEFAULT_ADMIN_PASSWORD = "adminpassword";
+const DEFAULT_ADMIN_EMAIL = "admin";
+const DEFAULT_ADMIN_PASSWORD = "admin";
 
 export async function loginUser({
   email,
