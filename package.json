@@ -1,5 +1,5 @@
 {
-  "name": "nextadmingithubstarter",
+  "name": "admindashboard",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,13 +9,26 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/eslint-plugin-next": "14.0.1",
-    "next": "14.0.1",
-    "react": "18",
-    "react-dom": "18"
+    "@monaco-editor/react": "^4.6.0",
+    "@next-auth/prisma-adapter": "^1.0.7",
+    "@prisma/client": "^5.19.0",
+    "bcrypt": "^5.1.1",
+    "monaco-editor": "^0.51.0",
+    "next": "14.2.7",
+    "next-auth": "^4.24.7",
+    "prisma": "^5.19.0",
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "eslint": "8",
-    "eslint-config-next": "14.0.1"
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.7",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5"
   }
 }
